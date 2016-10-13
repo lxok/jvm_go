@@ -1,4 +1,4 @@
 # jvm_go
-a jvm with golang
+a simple jvm with golang
 
-Reference:Zhang Xiuhong, Write Your Own Java Virtual Machine, 2016.  
+Reference: Zhang Xiuhong, Write Your Own Java Virtual Machine, 2016.  
