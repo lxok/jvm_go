@@ -18,16 +18,16 @@ type ClassFile struct {
 
 func Parse(classData []byte) (cf *ClassFile, err error) {
 	defer func() {
-		if r := recover; r != nil {
+		if r := recover(); r != nil {
 			var ok bool
 			err, ok = r.(error)
 			if !ok {
 				err = fmt.Errorf("%v", r)
 			}
 		}
-	}
+	}()
 	cr := &ClassReader{classData}
-	cf := &ClassFile{}
+	cf = &ClassFile{}
 	cf.read(cr)
 	return 
 }
@@ -102,8 +102,8 @@ func (self *ClassFile) SuperClassName() string {
 }
 
 func (self *ClassFile) InterfaceNames() []string {
-	interfaceNames := make(string[], len(self.interfaces))
-	for i, cpIndex := range self.interfaces{
+	interfaceNames := make([]string, len(self.interfaces))
+	for i, cpIndex := range self.interfaces {
 		interfaceNames[i] = self.constantPool.getClassName(cpIndex)
 	}
 	return interfaceNames
