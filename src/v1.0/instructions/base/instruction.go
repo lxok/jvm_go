@@ -1,6 +1,6 @@
 package base
 
-import "jvm_go/v1.0/rtda"
+import "v1.0/rtda"
 
 //interface
 type Instruction interface {
@@ -26,12 +26,12 @@ func (seft *BranchInstruction) FetchOperands(reader *BytecodeReader) {
 }
 
 //abstract class
-type Index8Instrction struct {
+type Index8Instruction struct {
 	Index uint
 }
 
-func (seft *Index8Instrction) FetchOperands(reader *BytecodeReader) {
-	seft.Index = uint(reader.readUint8())
+func (self *Index8Instruction) FetchOperands(reader *BytecodeReader) {
+	self.Index = uint(reader.ReadUint8())
 }
 
 //abstract class
@@ -40,5 +40,5 @@ type Index16Instrction struct {
 }
 
 func (seft *Index16Instrction) FetchOperands(reader *BytecodeReader) {
-	seft.Index = uint(reader.readUint16())
+	seft.Index = uint(reader.ReadUint16())
 }

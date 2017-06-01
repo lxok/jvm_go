@@ -1,12 +1,7 @@
 package constants
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
-
-//
-type ACONST_NULL struct{ base.NoOperandsInstruction }
-
-func (self *ACONST_NULL) Execute(frame *rtda.Frame) {}
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 //
 type ACONST_NULL struct{ base.NoOperandsInstruction }

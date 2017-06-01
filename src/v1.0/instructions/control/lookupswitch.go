@@ -1,7 +1,7 @@
 package control
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 type LOOKUP_SWITCH struct {
 	defaultOffset int32
@@ -9,7 +9,7 @@ type LOOKUP_SWITCH struct {
 	matchOffsets  []int32
 }
 
-func (self *LOOKUP_SWITCH) FetchOperands(reader *BytecodeReader) {
+func (self *LOOKUP_SWITCH) FetchOperands(reader *base.BytecodeReader) {
 	reader.SkipPadding()
 	self.defaultOffset = reader.ReadInt32()
 	self.npairs = reader.ReadInt32()

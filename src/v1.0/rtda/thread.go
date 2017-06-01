@@ -1,7 +1,7 @@
 package rtda
 
 type Thread struct {
-	pc int
+	pc    int
 	stack *Stack
 }
 
@@ -27,3 +27,6 @@ func (self *Thread) CurrentFrame() *Frame {
 	return self.stack.top()
 }
 
+func (self *Thread) NewFrame(maxLocals, maxStack uint) *Frame {
+	return NewFrame(self, maxLocals, maxStack)
+}

@@ -1,7 +1,7 @@
 package stack
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 //
 type SWAP struct{ base.NoOperandsInstruction }

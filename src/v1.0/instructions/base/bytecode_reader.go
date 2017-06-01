@@ -6,13 +6,13 @@ type BytecodeReader struct {
 	pc   int
 }
 
-func (self *BytecodeReader) Reset(code []byte, int pc) {
+func (self *BytecodeReader) Reset(code []byte, pc int) {
 	self.code = code
 	self.pc = pc
 }
 
 func (self *BytecodeReader) ReadUint8() uint8 {
-	i := self.code[pc]
+	i := self.code[self.pc]
 	self.pc++
 	return i
 }

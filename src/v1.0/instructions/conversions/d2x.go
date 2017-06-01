@@ -1,7 +1,7 @@
 package conversions
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 // Convert double to float
 type D2F struct{ base.NoOperandsInstruction }

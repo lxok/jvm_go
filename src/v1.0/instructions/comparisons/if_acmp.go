@@ -1,7 +1,7 @@
 package comparisons
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 // Branch if reference comparison succeeds
 type IF_ACMPEQ struct{ base.BranchInstruction }

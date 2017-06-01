@@ -1,13 +1,13 @@
 package stores
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 //
 type DSTORE struct{ base.Index8Instruction }
 
 func (self *DSTORE) Execute(frame *rtda.Frame) {
-	_dstore(frame, uint(self.index))
+	_dstore(frame, uint(self.Index))
 }
 
 //

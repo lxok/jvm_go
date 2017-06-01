@@ -1,13 +1,13 @@
 package loads
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 //
 type LLOAD struct{ base.Index8Instruction }
 
-func (self *ILOAD) Execute(frame *rtda.Frame) {
-	_lload(frame, uint(self.index))
+func (self *LLOAD) Execute(frame *rtda.Frame) {
+	_lload(frame, uint(self.Index))
 }
 
 //

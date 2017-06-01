@@ -1,19 +1,19 @@
 package stores
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 //
 type ISTORE struct{ base.Index8Instruction }
 
 func (self *ISTORE) Execute(frame *rtda.Frame) {
-	_istore(frame, uint(self.index))
+	_istore(frame, uint(self.Index))
 }
 
 //
 type ISTORE_0 struct{ base.NoOperandsInstruction }
 
-func (self *ISTORE) Execute(frame *rtda.Frame) {
+func (self *ISTORE_0) Execute(frame *rtda.Frame) {
 	_istore(frame, 0)
 }
 

@@ -1,7 +1,7 @@
 package math
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 // Increment local variable by constant
 type IINC struct {

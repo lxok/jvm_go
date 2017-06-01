@@ -76,9 +76,11 @@ func (self *OperandStack) PopRef() *Object {
 }
 
 func (self *OperandStack) PushSlot(slot Slot) {
-	self.slots[self.size++] = slot	
+	self.slots[self.size] = slot
+	self.size++
 }
 
 func (self *OperandStack) PopSlot() Slot {
-	return self.slots[--self.size]
+	self.size--
+	return self.slots[self.size]
 }

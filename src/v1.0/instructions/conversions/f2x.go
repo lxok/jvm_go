@@ -1,7 +1,7 @@
 package conversions
 
-import "jvm_go/v1.0/instructions/base"
-import "jvm_go/v1.0/rtda"
+import "v1.0/instructions/base"
+import "v1.0/rtda"
 
 // Convert float to double
 type F2D struct{ base.NoOperandsInstruction }
