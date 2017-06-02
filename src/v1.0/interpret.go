@@ -8,8 +8,8 @@ import "v1.0/rtda"
 
 func interpret(methodInfo *classfile.MemberInfo) {
 	codeAttr := methodInfo.CodeAttribute()
-	maxLocals := codeAttr.MaxLocals()
-	maxStack := codeAttr.MaxStack()
+	maxLocals := uint(codeAttr.MaxLocals())
+	maxStack := uint(codeAttr.MaxStack())
 	bytecode := codeAttr.Code()
 	thread := rtda.NewThread()
 	frame := thread.NewFrame(maxLocals, maxStack)
@@ -21,14 +21,14 @@ func interpret(methodInfo *classfile.MemberInfo) {
 func catchErr(frame *rtda.Frame) {
 	if r := recover(); r != nil {
 		fmt.Printf("LocalVars:%v\n", frame.LocalVars())
-		fmt.OperandStack("OperandStack:&v\n", frame.OperandStack())
+		fmt.Printf("OperandStack:&v\n", frame.OperandStack())
 		panic(r)
 	}
 }
 
-func loop(thread *rtda.Thread, bytecode []code) {
+func loop(thread *rtda.Thread, bytecode []byte) {
 	frame := thread.PopFrame()
-	reader := *base.BytecodeReader{}
+	reader := &base.BytecodeReader{}
 	for {
 		//
 		pc := frame.NextPC()
@@ -36,7 +36,7 @@ func loop(thread *rtda.Thread, bytecode []code) {
 
 		//decode
 		opcode := reader.ReadUint8()
-		inst := instrutions.NewInstruction(opcode)
+		inst := instructions.NewInstruction(opcode)
 		inst.FetchOperands(reader)
 		frame.SetNextPC(reader.PC())
 

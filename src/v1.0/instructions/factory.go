@@ -167,7 +167,7 @@ var (
 	*/
 )
 
-func newInstruction(opcode byte) base.Instruction {
+func NewInstruction(opcode byte) base.Instruction {
 	switch opcode {
 	case 0x00:
 		return nop

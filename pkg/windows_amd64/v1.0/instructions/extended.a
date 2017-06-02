@@ -1,5 +1,5 @@
 !<arch>
-__.PKGDEF       0           0     0     644     15740     `
+__.PKGDEF       0           0     0     644     15922     `
 go object windows amd64 go1.6 X:none
 build id "c4a7e242da753eb67f4cc0f82ec1f38c332bd651"
 
@@ -11,6 +11,7 @@ package extended
 	import math "v1.0/instructions/math"
 	import stores "v1.0/instructions/stores"
 	type @"v1.0/instructions/base".BytecodeReader struct { @"v1.0/instructions/base".code []byte; @"v1.0/instructions/base".pc int }
+	func (@"v1.0/instructions/base".self·2 *@"v1.0/instructions/base".BytecodeReader "esc:0x1") PC () (? int) { return @"v1.0/instructions/base".self·2.@"v1.0/instructions/base".pc }
 	func (@"v1.0/instructions/base".self·2 *@"v1.0/instructions/base".BytecodeReader "esc:0x1") ReadInt16 () (? int16)
 	func (@"v1.0/instructions/base".self·2 *@"v1.0/instructions/base".BytecodeReader "esc:0x1") ReadInt32 () (? int32)
 	func (@"v1.0/instructions/base".self·2 *@"v1.0/instructions/base".BytecodeReader "esc:0x1") ReadInt32s (@"v1.0/instructions/base".n·3 int32) (? []int32)
